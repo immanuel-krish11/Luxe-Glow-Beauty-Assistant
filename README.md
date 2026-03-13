@@ -16,21 +16,6 @@ A comprehensive, AI-powered Flask web application that provides in-depth facial 
 
 ---
 
-## 🎥 Demo Video
-
-> **Note:** Watch the demo video below to see the complete pipeline in action—from uploading a face image to getting the dynamic skin analysis and custom outfit recommendations.
-
-<!-- 
-🚨 IMPORTANT: Replace the link below with the actual URL/path to your demo video! 
-You can use an MP4 file path or a YouTube/Vimeo embed link.
--->
-
-[![Demo Video Placeholder](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-
-*(If you have a local video file, you can embed it like this: `<video src="static/demo_video.mp4" controls="controls" style="max-width: 100%;">Your browser does not support the video tag.</video>`)*
-
----
-
 ## 🛠️ Technology Stack
 
 - **Backend Framework:** Flask
@@ -94,7 +79,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ### 3. Install Dependencies
 Make sure you install the required packages. *(You may need to install specific PyTorch binaries matching your system architecture).*
 ```bash
-pip install flask werkzeug torch torchvision pandas numpy deepface transformers inference_sdk google-genai python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 4. Environment Variables
