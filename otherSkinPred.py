@@ -8,7 +8,7 @@ from inference_sdk import InferenceHTTPClient
 def other_predictions(img_path):
     CLIENT = InferenceHTTPClient(
         api_url="https://serverless.roboflow.com",
-        api_key="GkIOUKGcKbmZvh8O8Ml0"
+        api_key="" //write your api key here or in .env file
     )
     result = CLIENT.infer(img_path, model_id="dark_circle/1")
     # conf = round(result['predictions'][0]["confidence"] * 100, 2)
