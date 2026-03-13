@@ -77,6 +77,7 @@ skin-care-mk2/
 ```
 
 ---
+##  All files in models/ are removed from GitHub because they were too large. Contact me for the files or train your model and add there(keep the names similar to what functions need or change the path in the functions).
 
 ## ⚙️ Setup & Installation
 
