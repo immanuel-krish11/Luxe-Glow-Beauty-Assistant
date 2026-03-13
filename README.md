@@ -1,4 +1,4 @@
-# Skin Care and Outfit Recommendation App 🌟
+# Luxe Glow - A Skin Care and Outfit Recommendation App 🌟
 
 A comprehensive, AI-powered Flask web application that provides in-depth facial skin analysis, natural remedy prescriptions, and personalized outfit color recommendations based on your unique skin tone and features.
 
