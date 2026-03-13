@@ -1,0 +1,9 @@
+venv/
+.DS_Store
+__pycache__/
+.env
+demo.py 
+# these files are too large for github so removing them.
+models/acne_resnet50_best.pth
+models/best_model_skin_tone.pth.tar
+models/skin_type_efficientnetb0_acc88.pth

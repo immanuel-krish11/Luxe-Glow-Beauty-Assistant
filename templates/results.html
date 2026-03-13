@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skin Analysis Results | Luxe Skin Care</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
+</head>
+<body>
+<!-- Top Navigation Buttons -->
+<div class="top-nav">
+    <a href="/" class="nav-btn home-btn">Home</a>
+    <a href="/menu" class="nav-btn menu-btn">&#9776; Menu</a>
+</div>
+
+<div class="container">
+
+    <h1>Your Skin Analysis</h1>
+    <p class="subtitle">AI-powered insights tailored to your skin profile</p>
+
+    <!-- Uploaded Image Preview -->
+    <div class="image-preview">
+        <img src="{{  url_for('uploaded_file', filename=image_filename)}}" alt="Uploaded Face Image">
+    </div>
+
+    <div class="result-card">
+
+        <!-- Main Analysis Grid -->
+        <div class="result-grid">
+
+            <div class="result-item">
+                <div class="label">Skin Type</div>
+                <div class="value">{{ type }}</div>
+            </div>
+
+            <div class="result-item">
+                <div class="label">Estimated Skin Age</div>
+                <div class="value">{{ age }}</div>
+            </div>
+
+            <div class="result-item">
+                <div class="label">Acne Level</div>
+                <div class="value">{{ acne }}</div>
+            </div>
+
+            <div class="result-item">
+                <div class="label">Gender</div>
+                <div class="value">{{ gender }}</div>
+            </div>
+
+            <div class="result-item">
+                <div class="label">Race</div>
+                <div class="value">{{ race }}</div>
+            </div>
+
+        </div>
+
+        <!-- Other Observations -->
+        {% if other %}
+        <div class="other-metrics">
+            <h2>Other Observations (Eyebags, Wrinkles, etc...)</h2>
+            <ul>
+                {% for key, val in other.items() %}
+                <li>{{ key | capitalize }} - {{ "%.2f"|format(val) }}%</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Prescription -->
+        <div class="prescription">
+            <h2>Tailored Skin-Care Recommendations</h2>
+            {% for line in prescribe.split('\n') %}
+                {% if line.strip() %}
+                    <p>{{ line }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+        <a href="/face-analysis" class="btn">Analyze Another Face</a>
+        <a href="/outfit" class="btn secondary-btn">Get Outfit Recommendation</a>
+    </div>
+
+</div>
+
+</body>
+</html>

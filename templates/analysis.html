@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Face Analysis | Luxe Glow</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='analysis.css') }}">
+</head>
+
+<body>
+
+<a href="/menu" class="back-btn">← Back</a>
+
+<div class="container">
+
+<h1>Face Analysis</h1>
+<p class="motto">Upload your face image and let AI reveal your skin insights</p>
+
+<div class="analysis-card">
+
+<form id="analysisForm" action="/results" method="POST" enctype="multipart/form-data">
+
+<label class="upload-area">
+
+<input type="file" name="image" id="imageUpload" accept="image/*" required>
+
+<span class="upload-text">
+Drag & Drop or Click to Upload Face Image
+</span>
+
+<img id="preview" class="preview">
+
+</label>
+
+<button type="submit" class="predict-btn">
+Analyze Skin
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- Loading Screen -->
+
+<div id="loadingScreen">
+
+<div class="loader-card">
+
+<div class="spinner"></div>
+
+<p id="loadingText">Analyzing Skin...</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+const upload = document.getElementById("imageUpload");
+const preview = document.getElementById("preview");
+
+upload.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(file){
+preview.src = URL.createObjectURL(file);
+preview.style.display = "block";
+}
+
+});
+
+
+/* Loading animation */
+
+const form = document.getElementById("analysisForm");
+const loading = document.getElementById("loadingScreen");
+const text = document.getElementById("loadingText");
+
+form.addEventListener("submit", function(){
+
+loading.style.display = "flex";
+
+const messages = [
+"Analyzing Skin...",
+"Detecting Acne...",
+"Evaluating Pigmentation...",
+"Generating AI Report..."
+];
+
+let i = 0;
+
+setInterval(()=>{
+text.innerText = messages[i % messages.length];
+i++;
+},1200);
+
+});
+
+</script>
+
+</body>
+</html>

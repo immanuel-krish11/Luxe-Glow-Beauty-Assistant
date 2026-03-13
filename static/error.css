@@ -1,0 +1,84 @@
+/* ---------- Body & Background ---------- */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error-page {
+    background: url('/static/error.jpg') no-repeat center center/cover; /* add your luxury background image in static/images */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* ---------- Overlay for contrast ---------- */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* subtle dark overlay */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- Error Content ---------- */
+.error-content {
+    text-align: center;
+    color: #f5f3ef;
+    padding: 40px 60px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.error-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    margin: 0;
+    color: #bfa76f;
+}
+
+.error-content p {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #f5f3ef;
+}
+
+/* ---------- Button ---------- */
+.error-content .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #bfa76f;
+    border-radius: 30px;
+    border: 1px solid #bfa76f;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error-content .btn:hover {
+    background-color: #a88b57;
+    border-color: #a88b57;
+    color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 768px) {
+    .error-content h1 {
+        font-size: 60px;
+    }
+
+    .error-content p {
+        font-size: 18px;
+    }
+    
+    .error-content {
+        padding: 30px 40px;
+    }
+}

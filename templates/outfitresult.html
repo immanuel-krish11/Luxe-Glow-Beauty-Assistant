@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outfit Recommendations | Luxe Skin Care</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='outfitresult.css') }}">
+</head>
+<body>
+
+<!-- Top Navigation Buttons -->
+<div class="top-nav-right">
+    <a href="/" class="nav-btn home-btn">Home</a>
+    <a href="/menu" class="nav-btn menu-btn">&#9776; Menu</a>
+</div>
+
+<div class="container">
+
+    <!-- Page Headings -->
+    <h1 class="center-heading">Tailored Outfits for your Skin Tone</h1>
+    <p class="subtitle center-heading">Curated color combinations just for you!!</p>
+
+    <!-- Uploaded Image Preview -->
+    <div class="image-preview">
+        <img src="{{ url_for('uploaded_file', filename=image_filename) }}" alt="Your Image">
+    </div>
+
+    <!-- Outfit Combinations -->
+    <div class="outfit-grid">
+        {% for i in range(3) %}
+        <div class="outfit-card">
+            <div class="color-squares">
+                <div class="top-color" style="background-color: {{ outfits_hex[i][0] }}"></div>
+                <div class="bottom-color" style="background-color: {{ outfits_hex[i][1] }}"></div>
+            </div>
+            <div class="outfit-names">
+                <p>Top Wear: {{ outfits_name[i][0].replace('_',' ').title() }}</p>
+                <p>Bottom Wear: {{ outfits_name[i][1].replace('_',' ').title() }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+        <a href="/outfit" class="btn secondary-btn">Get Another Outfit Recommendation</a>
+        <a href="/face-analysis" class="btn">Try Facial Analysis</a>
+    </div>
+
+</div>
+
+</body>
+</html>

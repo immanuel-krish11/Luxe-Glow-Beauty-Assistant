@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+
+    /* Background image  */
+    background: url("about.jpg") no-repeat center center/cover;
+
+    color:white;
+    min-height:100vh;
+}
+
+/* Back button */
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:40px;
+    padding:10px 24px;
+    border-radius:25px;
+    background:#d4af37;
+    color:black;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:white;
+}
+
+/* Container */
+
+.container{
+    width:900px;
+    margin:auto;
+    padding-top:120px;
+    text-align:center;
+}
+
+/* Brand name */
+
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:50px;
+    letter-spacing:3px;
+}
+
+/* Motto */
+
+.motto{
+    color:#d4af37;
+    margin-top:10px;
+    margin-bottom:60px;
+    font-style:italic;
+}
+
+/* Standard card */
+
+.card {
+    background: rgba(26, 26, 37, 0.5); /* semi-transparent dark overlay */
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    backdrop-filter: blur(8px); /* optional: adds subtle blur behind card for luxury effect */
+}
+
+.card h2{
+    font-family:'Playfair Display', serif;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.card p{
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* Creator highlight */
+
+.creator-card {
+    background: rgba(27, 27, 43, 0.5); /* semi-transparent dark gradient replacement */
+    padding: 45px;
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px); /* optional: adds subtle blur for readability */
+}
+
+.creator-card h2{
+    font-family:'Playfair Display', serif;
+    color:#d4af37;
+    margin-bottom:25px;
+}
+
+.creator-info h3{
+    font-family:'Playfair Display', serif;
+    font-size:28px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.creator-info p{
+    line-height:1.7;
+    margin-bottom:15px;
+    opacity:0.9;
+}
